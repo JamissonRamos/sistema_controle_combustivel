@@ -8,7 +8,7 @@
     padding: 0;
 
     font-family: 'Roboto', sans-serif;
-
+    font-size: 16px;
     font-weight: 300;
     color: var(--cor-text-1);
     
@@ -17,6 +17,11 @@
 
     outline: none;
     letter-spacing: 0.06em; /* Para dar espaçamento entre as letras */
+
+    border-width: none;
+    border-style: none;
+    border-color: none;
+    border-image: none;
 }
 
 :root
@@ -27,6 +32,9 @@
     --cor-bg-3: #171717;
     --cor-bg-4: #393939;
     --cor-bg-5: #B20BDC;
+    --cor-bg-6: #9A9FA8;
+    
+    
 
     --cor-border-1: #B20BDC;
     
@@ -61,7 +69,7 @@ header, main, footer
 {
     /* Os elementos recebe aqui o espaçamento do contêiner, assim pode trabalha de acordo a necessidade do projeto */
     /* border: 1px solid blue; */
-
+  
     margin: 0 12vw 10vh 12vw;
 }
 

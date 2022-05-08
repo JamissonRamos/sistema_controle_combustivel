@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="css/index/index.css"> <!-- Css padrão  -->
     <link rel="stylesheet" href="css/index/header/style.css"> 
+    <link rel="stylesheet" href="css/index/main/style.css"> 
 
 </head>
 <body>
@@ -39,19 +40,19 @@
 
         <main>
             
-            <section>
+            <section class="secao_introducao">
 
                 <div class="container_left">
 
-                    <div>
+                    <div class="title_primary">
 
-                        <h1> Controle de Gastos de Combustível </h1>
+                        <h1 class="txt_primary"> Controle de Gastos de Combustível </h1>
 
                     </div>
 
-                    <div>
+                    <div class="content_txt">
 
-                        <p>
+                        <p class="txt">
                             Você sabe quanto seu veiculo gatas de combustível? ainda não? 
                             Então essa aplicação foi feita pensando em você.
                             Insira algumas informações e saiba quanto você gasta de combustível com o seu veículo ;)
@@ -59,20 +60,73 @@
 
                     </div>
 
-                    <div>
+                    <div class="content_img">
                         
-                        <div>
+                        <div class="content">
 
-                            <img src="assets/icone_introducao.png" alt=" ícone user mais calculadora ">
-                            
+                            <img class="img" src="assets/icone_introducao.png" alt=" ícone user mais calculadora ">
+
                         </div>
 
                     </div>
                 </div>
 
-                <div class="container_right">right</div>
+                <div class="container_right">
+
+                    <form id="frm_cadstro" class="frm_Cds" name="dados">
+				
+                        <div class="input">
+
+                            <label for="media">
+                                Quantos km 1L seu veiculo faz?
+                            </label>
+
+                            <input type="text" name="media" id="media" class="campo" data-required data-only-numbers>
+
+                        </div>
+
+                        <div class="input">
+
+                            <label for="preco">
+                                Qual o preço atual da gasolina no posto?
+                            </label>
+
+                            <input type="text" name="preco" id="preco" class="campo" data-required data-only-numbers>
+
+                        </div>
+
+                        <div class="input">
+
+                            <label for="quilometros_dia"> 
+                                Quantos km por dia você percorre?
+                            </label>
+
+                            <input type="text" name="quilometros_dia" id="quilometros_dia" class="campo" data-required data-only-numbers>
+
+                        </div>
+
+                        <div class="input">
+
+                            <label for="dias_semana">
+                                Quantos dias da semana você anda com o veículo?
+                            </label>
+
+                            <input type="text" name="dias_semana" id="dias_semana" class="campo"  data-required data-only-numbers data-rend-numbe>
+
+                        </div>
+    
+                        <div class="">
+
+                            <button id="btnCalcular">Calcular</button>
+
+                        </div>
+
+                    </form>
+                
+                </div>
 
             </section>
+
         </main>
 
         <footer>

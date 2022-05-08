@@ -1,0 +1,224 @@
+
+main
+{
+    /* border: 1px solid red; */
+    height: 75%;
+}
+
+.secao_introducao
+{
+    border: 1px solid blue;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container_left 
+{
+    border: 1px solid red;
+
+    width: 45%;
+   
+
+    margin-right: 10px;
+}   
+
+.container_left  .title_primary
+{
+    /* border: 1px solid orange; */
+    
+    width: 100%;
+    height: 106px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4em 0;
+    margin-bottom: 10px;
+}
+
+.container_left  .title_primary .txt_primary
+{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 50px;
+    text-align: center;
+
+    color: var(--cor-txt-2);
+}
+
+.container_left .content_txt
+{
+    /* border: 1px solid red; */
+    
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-bottom: 10px;
+}
+
+.container_left .content_txt .txt
+{
+    font-weight: 700;
+    font-size: .8em;
+    line-height: 28px;
+    text-align: justify;
+    
+    color: var(--cor-txt-3);
+}
+
+.container_left .content_img
+{
+    /* border: 1px solid green; */
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_left .content_img .content
+{
+    /* border: 1px solid red; */
+
+    width: 80%;
+    height: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_left .content_img .content img
+{
+   
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+
+
+
+.container_right
+{
+    border: 1px solid green;
+
+    width: 55%;
+    
+}
+
+
+.container_right .frm_Cds
+{
+    /* border: 1px solid red; */
+    
+    width: 100%;
+    height: 100%;
+
+    padding-top: 10px;
+
+    background-color: var(--cor-bg-2);
+
+    border-radius: 20px;
+
+    box-shadow: 2px 2px 2px var(--cor-bg-6), -0.4em 0.4em .2em .1em  var(--cor-bg-6);
+   
+}
+
+.frm_Cds .input
+{
+    /* border: 1px solid blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 15px 5px;
+    position: relative;
+	height: 45px;
+    
+}
+
+.frm_Cds .input label
+{
+    /* border: 1px solid red; */
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: left;
+    color: var(--low-amphasis);
+    padding: 0 5px ;
+    
+}
+
+.frm_Cds .input input
+{
+    border-bottom: 1px solid var(--low-amphasis);
+    background-color: transparent;
+    color: var(--heigh-amphens);
+    padding: 5px 10px;
+    font-size: 18px;
+    position: absolute;
+    width: 90%;
+    
+}
+
+.frm_Cds .input input:focus
+{
+    border-bottom: 1px solid var(--brand-primary);
+    top: 34px;
+    left: 10px;
+}
+
+.frm_Cds .input.preenchido .campo 
+{
+    border-bottom: 1px solid var(--brand-primary);
+    top: 34px;
+    left: 10px;
+}
+
+.frm_Cds .btn
+{
+    /* border: 1px solid red; */
+    width: 90%;
+    height: 48px;
+    margin: 40px auto 5px auto;
+    text-align: center;
+}
+
+.frm_Cds .btn button
+{
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    color: var(--brand-primary);
+    font-size: 1.2em;
+    font-weight: 600;
+ 
+    background-color: var(--low-amphasis);
+    transition: 0.24s all ease-in-out;
+}
+
+.frm_Cds .btn button:hover
+{
+    /* border: 1px solid var(--brand-primary); */
+    color: var(--brand-primary);
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: var(--heigh-amphens);    
+}
