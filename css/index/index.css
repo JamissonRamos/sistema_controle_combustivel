@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/*  Formatação padrões dos elementos da página  */
+
+*
+{
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Roboto', sans-serif;
+
+    font-weight: 300;
+    color: var(--cor-text-1);
+    
+    overflow: hidden;
+    box-sizing: border-box;
+
+    outline: none;
+    letter-spacing: 0.06em; /* Para dar espaçamento entre as letras */
+}
+
+:root
+{
+    
+    --cor-bg-1: #FFFFFF;
+    --cor-bg-2: #52575C;
+    --cor-bg-3: #171717;
+    --cor-bg-4: #393939;
+    --cor-bg-5: #B20BDC;
+
+    --cor-border-1: #B20BDC;
+    
+    --cor-txt-1: #FFFFFF;
+    --cor-txt-2: #B20BDC;
+    --cor-txt-3: #00BFA6;
+    --cor-txt-4: #9A9FA8;
+
+}
+
+/* 
+   
+
+    =======================================================================================
+    =======================================================================================
+*/
+
+
+.container
+{
+    /* border: 1px solid red; */
+    
+    width: 100vw;
+    min-width: 375px;
+    max-width: 1440px;
+    height: 100vh;
+
+    background-color: var(--cor-bg-1);
+}
+
+header, main, footer
+{
+    /* Os elementos recebe aqui o espaçamento do contêiner, assim pode trabalha de acordo a necessidade do projeto */
+    /* border: 1px solid blue; */
+
+    margin: 0 12vw 10vh 12vw;
+}
+
+/* Padrões de btns */
+.btn
+{
+    /* border: 1px solid blue; */
+
+    /* width: 100%; */
+    height: 36px;
+    
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    padding: 0 18px;
+    /* margin: 0 10px; */
+
+    background: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.name_btn
+{
+    font-weight: 900;
+    font-size: 1em;
+
+    z-index: 1;
+}
+
+.btn::before
+{
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+
+    background: linear-gradient(180deg, var(--cor-bg-5) 11.46%, var(--cor-bg-2) 100%);
+
+    transition: 0.8s;
+}
+
+/* Btn primary */
+
+
+/* Btn secondary */
+
+.btn_secondary
+{
+   border: 2px solid var(--cor-border-1);
+
+   color: var(--cor-txt-2);
+}
+
+.btn_secondary:hover
+{
+    border: hidden;
+
+    color: var(--cor-txt-1);
+
+    transition: all .10s ease-in-out;
+}
+
+.btn_secondary::before
+{
+    height: 0%;
+
+    bottom: 0;
+
+    border-radius: 50% 50% 0 0;
+}
+
+.btn_secondary:hover::before
+{
+    height: 180%;
+}
+
+
+/* Responsividade da página */
+
+@media screen and (min-width: 1441px) 
+{
+    body
+    {      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

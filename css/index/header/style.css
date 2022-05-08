@@ -1,0 +1,40 @@
+
+.contaoner_header
+{
+    /* border: 1px solid red; */
+
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.container_menu
+{
+    /* border: 1px solid blue; */
+
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    padding: 100% 0;
+}
+
+
+/* Responsividade da página */
+
+@media screen and (max-width: 425px) 
+{
+    .container_menu
+    {      
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
