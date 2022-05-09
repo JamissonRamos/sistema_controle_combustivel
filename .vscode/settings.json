@@ -1,3 +1,6 @@
 {
-    "diffEditor.wordWrap": "on"
+    "diffEditor.wordWrap": "on",
+    "cSpell.words": [
+        "Jamisson"
+    ]
 }

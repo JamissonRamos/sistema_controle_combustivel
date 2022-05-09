@@ -70,7 +70,8 @@ header, main, footer
     /* Os elementos recebe aqui o espaçamento do contêiner, assim pode trabalha de acordo a necessidade do projeto */
     /* border: 1px solid blue; */
   
-    margin: 0 12vw 10vh 12vw;
+    margin: 0 12vw 2vh 12vw;
+    
 }
 
 /* Padrões de btns */
@@ -117,12 +118,13 @@ header, main, footer
     position: absolute;
     left: 0;
 
-    background: linear-gradient(180deg, var(--cor-bg-5) 11.46%, var(--cor-bg-2) 100%);
+    background: linear-gradient(180deg, var(--cor-bg-5) 11.46%, var(--cor-bg-3) 100%);
 
     transition: 0.8s;
 }
 
 /* Btn primary */
+
 
 
 /* Btn secondary */

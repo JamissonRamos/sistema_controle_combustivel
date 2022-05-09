@@ -2,12 +2,14 @@
 main
 {
     /* border: 1px solid red; */
-    height: 75%;
+    /* height: 75%; */
+
+   
 }
 
 .secao_introducao
 {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 
     width: 100%;
     height: 100%;
@@ -15,15 +17,22 @@ main
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+   
 }
 
 .container_left 
 {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     width: 45%;
-   
+    height: 100%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+   
     margin-right: 10px;
 }   
 
@@ -32,14 +41,14 @@ main
     /* border: 1px solid orange; */
     
     width: 100%;
-    height: 106px;
+    /* height: 20%; */
     
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 4em 0;
-    margin-bottom: 10px;
+    /* padding: 1em 0; */
+    margin-bottom: 1rem;
 }
 
 .container_left  .title_primary .txt_primary
@@ -57,14 +66,15 @@ main
 {
     /* border: 1px solid red; */
     
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 20%;
     
     display: flex;
     align-items: center;
     justify-content: center;
     
-    margin-bottom: 10px;
+    padding: 1rem 0;
+    /* margin-bottom: 2em; */
 }
 
 .container_left .content_txt .txt
@@ -81,8 +91,8 @@ main
 {
     /* border: 1px solid green; */
 
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 50%;
 
     display: flex;
     align-items: center;
@@ -103,35 +113,33 @@ main
 
 .container_left .content_img .content img
 {
-   
-
     width: 100%;
     height: 100%;
-
 }
-
-
-
-
 
 
 .container_right
 {
-    border: 1px solid green;
+    /* border: 1px solid green; */
 
     width: 55%;
-    
-}
+    height: 100%;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em ;
+}
 
 .container_right .frm_Cds
 {
     /* border: 1px solid red; */
     
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    height: 525px;
 
-    padding-top: 10px;
+    padding: 58px 0;
 
     background-color: var(--cor-bg-2);
 
@@ -140,85 +148,102 @@ main
     box-shadow: 2px 2px 2px var(--cor-bg-6), -0.4em 0.4em .2em .1em  var(--cor-bg-6);
    
 }
-
+ 
 .frm_Cds .input
 {
     /* border: 1px solid blue; */
+
     width: 100%;
+	height: 58px;
+
+    position: relative;
+
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
     margin: 20px auto;
-    padding: 15px 5px;
-    position: relative;
-	height: 45px;
+    padding:  0 ;
+    
     
 }
 
-.frm_Cds .input label
+.frm_Cds .input .title_input
 {
     /* border: 1px solid red; */
-    font-size: 1.2em;
+
+    width: 95%;
+    
+    padding: 0 .3em;
+
+
+    font-size: 1.1em;
     font-weight: 400;
     text-align: left;
-    color: var(--low-amphasis);
-    padding: 0 5px ;
-    
+
+    color: var(--cor-txt-4);
+        
 }
 
-.frm_Cds .input input
+.frm_Cds .input .campo
 {
-    border-bottom: 1px solid var(--low-amphasis);
-    background-color: transparent;
-    color: var(--heigh-amphens);
-    padding: 5px 10px;
-    font-size: 18px;
+    width: 95%;
+  
     position: absolute;
-    width: 90%;
+
+    padding: .3em 1.2em ;
+
+    border-bottom: 1px solid var(--cor-txt-4);
+
+    background-color: transparent;
+
+    color: var(--cor-txt-4);
+
+    font-size: 1em;
     
 }
 
-.frm_Cds .input input:focus
+.frm_Cds .input .campo:focus
 {
-    border-bottom: 1px solid var(--brand-primary);
-    top: 34px;
+    top: 20px;
     left: 10px;
+
+    border-bottom: 1px solid var(--cor-txt-2);
 }
 
 .frm_Cds .input.preenchido .campo 
 {
     border-bottom: 1px solid var(--brand-primary);
-    top: 34px;
+    top: 18px;
     left: 10px;
 }
 
-.frm_Cds .btn
+.frm_Cds .content_btn
 {
     /* border: 1px solid red; */
+
     width: 90%;
     height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     margin: 40px auto 5px auto;
+
     text-align: center;
 }
 
-.frm_Cds .btn button
+.frm_Cds .content_btn .btn
 {
-    /* border: 1px solid blue; */
-    width: 100%;
+
+    width: 60%;
     height: 100%;
-    border-radius: 20px;
-    color: var(--brand-primary);
-    font-size: 1.2em;
-    font-weight: 600;
- 
-    background-color: var(--low-amphasis);
-    transition: 0.24s all ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.frm_Cds .btn button:hover
-{
-    /* border: 1px solid var(--brand-primary); */
-    color: var(--brand-primary);
-    font-size: 1.2em;
-    font-weight: 600;
-    background-color: var(--heigh-amphens);    
-}
+

@@ -7,11 +7,18 @@
 
     <title> S.C.C. </title>
 
-    <!-- Estilo da página -->
+      <!-- Link externo -->
+      <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet"> -->
+      <script src="https://kit.fontawesome.com/5801faff1f.js" crossorigin="anonymous"></script>
+   
+      <!-- Link do icone da aba do navegador -->
+      <link rel="shortcut icon" href="./assets/icone_introducao.png" type="image/x-icon">
 
+    <!-- Estilo da página -->
     <link rel="stylesheet" href="css/index/index.css"> <!-- Css padrão  -->
     <link rel="stylesheet" href="css/index/header/style.css"> 
     <link rel="stylesheet" href="css/index/main/style.css"> 
+    <link rel="stylesheet" href="css/index/footer/style.css"> 
 
 </head>
 <body>
@@ -74,11 +81,11 @@
                 <div class="container_right">
 
                     <form id="frm_cadstro" class="frm_Cds" name="dados">
-				
+
                         <div class="input">
 
-                            <label for="media">
-                                Quantos km 1L seu veiculo faz?
+                            <label class="title_input" for="media">
+                                Quantos km com 1L seu veiculo faz?
                             </label>
 
                             <input type="text" name="media" id="media" class="campo" data-required data-only-numbers>
@@ -87,7 +94,7 @@
 
                         <div class="input">
 
-                            <label for="preco">
+                            <label class="title_input" for="preco">
                                 Qual o preço atual da gasolina no posto?
                             </label>
 
@@ -97,7 +104,7 @@
 
                         <div class="input">
 
-                            <label for="quilometros_dia"> 
+                            <label class="title_input" for="quilometros_dia"> 
                                 Quantos km por dia você percorre?
                             </label>
 
@@ -107,7 +114,7 @@
 
                         <div class="input">
 
-                            <label for="dias_semana">
+                            <label class="title_input" for="dias_semana">
                                 Quantos dias da semana você anda com o veículo?
                             </label>
 
@@ -115,9 +122,11 @@
 
                         </div>
     
-                        <div class="">
+                        <div class="content_btn">
 
-                            <button id="btnCalcular">Calcular</button>
+                            <button id="btnCalcular" class="btn btn_secondary ">
+                                <span class="name_btn"> Calcular </span>
+                            </button>
 
                         </div>
 
@@ -130,7 +139,52 @@
         </main>
 
         <footer>
-            rodape
+
+            <section class="container_footer">
+
+                <div class="title_criador">
+
+                    <a class="link_portifolio" href="https://portfolio-jamisson.web.app/" target="_blank" >
+                        
+                        <span class="text text_first">Desenvolvido por</span>
+                        
+                        <span class="text text_second">Jamisson { }</span>
+                    </a>
+
+                </div>
+
+                <div class="container_redesocial">
+                    
+                    <div class="box_card_social">
+                    
+                        <a  class="btn_menu_lateral" target="_blank" href="https://www.linkedin.com/in/jamisson-lira-ramos">
+                            <i class=" icone_menu fab fa-linkedin-in"> </i>
+                        </a>
+
+                    </div>
+
+                    <div class="box_card_social">
+                    
+                        <a  class="btn_menu_lateral" target="_blank" href="https://github.com/JamissonRamos?rel=outbound">
+                            <i class=" icone_menu fab fa-github"> </i>
+                        </a>
+
+                    </div>
+
+                    <div class="box_card_social">
+                    
+                        <a  class="btn_menu_lateral" target="_blank" href="https://www.instagram.com/jamissonliraramos/">
+                            <i class=" icone_menu fab fa-instagram"> </i>
+                        </a>
+
+                    </div>         
+            
+
+
+                </div>
+
+            </section>
+
         </footer>
 
 
