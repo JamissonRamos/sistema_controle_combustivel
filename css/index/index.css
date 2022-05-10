@@ -12,7 +12,7 @@
     font-weight: 300;
     color: var(--cor-text-1);
     
-    overflow: hidden;
+    /* overflow: hidden; */
     box-sizing: border-box;
 
     outline: none;
@@ -157,6 +157,30 @@ header, main, footer
 .btn_secondary:hover::before
 {
     height: 180%;
+}
+
+
+/* Formatação de aviso de validação de campos */
+
+.error-validation 
+{
+    /* border: 1px solid red; */
+
+    width: 95%;
+
+    position: absolute;
+    top: 55px;
+    left: 10px;
+
+    font-size: .8em;
+    font-weight: 500;
+
+    color: var( --cor-txt-2);
+}
+
+.template 
+{
+  display: none;
 }
 
 
