@@ -109,12 +109,16 @@ export class ValidatorCampos
 
             novaDivErro.textContent = msg;
 
+            console.log(input)
+            
             let inputPai = input.parentNode;
+            
+            console.log(inputPai)
 
             novaDivErro.classList.remove('template');
 
             inputPai.appendChild(novaDivErro);
-
+            
             novaDivErro.classList.add('e');
 
             // novaDivErro.style.backgroundColor = 'rgba(252, 14, 14, 0.233)';

@@ -1,20 +1,29 @@
 import {ValidatorCampos} from "./modules/validacao_campo.js";
+import {addcl,remcl} from "./modules/animacoes.js";
 
 //#region Variveis
 
 let validator = new ValidatorCampos();
 
-//#endregion
+//recebe todos os inputs do frm
+const inputs = document.querySelectorAll(".campo");
 
+//#endregion
 
 
 //#region Eventos do HTML
 
+//Fica verificando os eventos de focus e blur, quando o input recebe foco e perde o foco
+inputs.forEach(input => {
+
+	input.addEventListener("focus", addcl);
+
+	input.addEventListener("blur", remcl);
+});
+
 btnCalcular.addEventListener('click', (event) => {   
     
     event.preventDefault(); 
-    
-    console.log('clicou no btn de calculo dos dados')
     
     //mandando o meu form para ser valiado
     validator.validate(idFormCadastro);
@@ -24,10 +33,7 @@ btnCalcular.addEventListener('click', (event) => {
     if(erro.length === 0)
     {
         // frm.id == 'formIn' ? conexaoCrud(1) : conexaoCrud(2)
-        console.log('Deu certo mano')
-        formSubmit()
-        // event.target.submit();
-        //event.submit();
+        //formSubmit()
     }
 })
 
