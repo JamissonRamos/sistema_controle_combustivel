@@ -11,7 +11,7 @@
     font-size: 16px;
     font-weight: 300;
     color: var(--cor-text-1);
-    
+
     overflow: hidden;
     box-sizing: border-box;
 
@@ -26,18 +26,21 @@
 
 :root
 {
-    
+
     --cor-bg-1: #FFFFFF;
     --cor-bg-2: #52575C;
     --cor-bg-3: #171717;
     --cor-bg-4: #393939;
     --cor-bg-5: #B20BDC;
     --cor-bg-6: #9A9FA8;
-    
-    
+    --cor-bg-7: rgba(57, 57, 57, 0.94);
+
+
 
     --cor-border-1: #B20BDC;
-    
+
+    --cor-box-shadow-1: rgba(0, 0, 0, 0.4);
+
     --cor-txt-1: #FFFFFF;
     --cor-txt-2: #B20BDC;
     --cor-txt-3: #00BFA6;
@@ -45,18 +48,24 @@
 
 }
 
-/* 
-   
+/*
+
 
     =======================================================================================
     =======================================================================================
 */
 
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .container
 {
     /* border: 1px solid red; */
-    
+
     width: 100vw;
     min-width: 375px;
     max-width: 1440px;
@@ -69,9 +78,9 @@ header, main, footer
 {
     /* Os elementos recebe aqui o espaçamento do contêiner, assim pode trabalha de acordo a necessidade do projeto */
     /* border: 1px solid blue; */
-  
+
     margin: 0 12vw 2vh 12vw;
-    
+
 }
 
 /* Padrões de btns */
@@ -81,9 +90,9 @@ header, main, footer
 
     /* width: 100%; */
     height: 36px;
-    
+
     position: relative;
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -159,10 +168,38 @@ header, main, footer
     height: 180%;
 }
 
+/* Formatação do modal */
+
+.modal
+{
+    width: 0vw;
+    height: 0vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: var(--cor-bg-7);
+
+    z-index: 10;
+
+    transform: translateX(calc(9% + 100px));
+    transition: all 0.9s cubic-bezier(0.68,-0.55,0.265,2.50) ;
+}
+
+.modal.active
+{
+    width: 100vw;
+    height: 100vh;
+
+    transform: translateX(0%);
+}
+
+
 
 /* Formatação de aviso de validação de campos */
 
-.error-validation 
+.error-validation
 {
     /* border: 1px solid red; */
 
@@ -180,7 +217,7 @@ header, main, footer
     overflow: auto;
 }
 
-.template 
+.template
 {
   display: none;
 }
@@ -188,10 +225,10 @@ header, main, footer
 
 /* Responsividade da página */
 
-@media screen and (min-width: 1441px) 
+@media screen and (min-width: 1441px)
 {
     body
-    {      
+    {
         display: flex;
         align-items: center;
         justify-content: center;

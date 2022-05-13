@@ -11,6 +11,22 @@ const inputs = document.querySelectorAll(".campo");
 //#endregion
 
 
+//#region Funções
+
+function modal() 
+{
+    // idDivModal.classList.toggle("template")
+    idDivModal.classList.toggle("active")
+    idDivResposta.classList.toggle("active")
+}
+//#endregion
+
+
+
+
+
+
+
 //#region Eventos do HTML
 
 //Fica verificando os eventos de focus e blur, quando o input recebe foco e perde o foco
@@ -32,6 +48,7 @@ btnCalcular.addEventListener('click', (event) => {
 
     if(erro.length === 0)
     {
+        modal()
         // frm.id == 'formIn' ? conexaoCrud(1) : conexaoCrud(2)
         //formSubmit()
     }
