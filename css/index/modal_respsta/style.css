@@ -17,7 +17,7 @@
     box-shadow: 2px 4px 2px 5px var(--cor-box-shadow-1);
     border-radius: 18px;
 
-    z-index: 11;
+    z-index: 2;
 
     transform: translateX(calc(9% + 100px));
     transition: all 1s cubic-bezier(0.68,-0.55,0.265,2.50) ;

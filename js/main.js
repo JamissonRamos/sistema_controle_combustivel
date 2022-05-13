@@ -1,5 +1,6 @@
 import {ValidatorCampos} from "./modules/validacao_campo.js";
 import {addcl,remcl} from "./modules/animacoes.js";
+import {abrirCard,configCard} from "./modules/modal_msgbox.js";
 
 //#region Variveis
 
@@ -55,6 +56,30 @@ btnCalcular.addEventListener('click', (event) => {
 })
 
 
+idBtnSalvaHistorico.addEventListener("click", () => 
+{ 
+    abrirCard(); 
+
+    configCard(1);
+
+});
+
+idBtnDescartaHistorico.addEventListener("click", () => 
+{ 
+    abrirCard(); 
+
+    configCard(2);
+    
+});
+
+idClose.addEventListener("click", () => 
+{
+    idNotifications.classList.remove("active");
+
+    idBarraProgreco.classList.remove("active");
+
+    // setTimeout(() => { idBarraProgreco.classList.remove("active"); }, 6000);
+})
 
 
 

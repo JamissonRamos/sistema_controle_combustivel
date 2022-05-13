@@ -13,6 +13,7 @@
    
       <!-- Link do icone da aba do navegador -->
       <link rel="shortcut icon" href="./assets/icone_introducao.png" type="image/x-icon">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Estilo da página -->
     <link rel="stylesheet" href="css/index/index.css"> <!-- Css padrão  -->
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="css/index/main/style.css"> 
     <link rel="stylesheet" href="css/index/footer/style.css"> 
     <link rel="stylesheet" href="css/index/modal_respsta/style.css"> 
+    <link rel="stylesheet" href="css/index/modal_msgbox/style.css"> 
 
 </head>
 <body>
@@ -267,16 +269,47 @@
         </div>
 
         <div class="conten_btn">
-            <button id="" class="btn btn_secondary ">
+            <button id="idBtnSalvaHistorico" class="btn btn_secondary ">
                 <span class="name_btn"> Salvar histórico </span>
             </button>
 
-            <button id="" class="btn btn_secondary ">
+            <button id="idBtnDescartaHistorico" class="btn btn_secondary ">
                 <span class="name_btn"> Descarta </span>
             </button>
 
         </div>
     </div>
+
+    
+    <div id="idNotifications" class="notifications ">
+
+        <div id="idNotificationsContent" class="notifications_content"> 
+            
+            <div id="idBoxIcone" class="box_icone">
+
+                <span id="idIcone" class="material-icons">check</span>
+
+                <!-- <span class="material-icons">warning_amber</span> -->
+
+                <!-- <span class="material-icons">close</span> -->
+                
+                <!-- <img src="gif.gif" alt="Foto para clip" width="350" height="240" style="position:absolute;clip: rect(90px, 280px, 160px, 80px); " />  -->
+            </div>
+
+            <div class="messagen">
+
+                <span id="idtitle" class="text_one"> ****** </span>
+
+                <span id="idMsg" class="text_two"> ******* </span>
+
+            </div> 
+        </div> <!-- fim da div notifications_content -->
+
+        <span id="idClose" class=" material-icons close">close</span>
+
+        <div id="idBarraProgreco" class="progress "></div> <!-- fim da div progress -->
+
+    </div> <!-- fim da div notifications -->
 
     <p class="error-validation template">teste de mascara</p>  
     <script type="module" src="./js/main.js"></script>
