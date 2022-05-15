@@ -1,6 +1,7 @@
 import {ValidatorCampos} from "./modules/validacao_campo.js";
 import {addcl,remcl} from "./modules/animacoes.js";
 import {abrirCard,configCard} from "./modules/modal_msgbox.js";
+import {receberDadosFrm} from "./modules/calculos_dados_frm.js";
 
 //#region Variveis
 
@@ -49,27 +50,29 @@ btnCalcular.addEventListener('click', (event) => {
 
     if(erro.length === 0)
     {
-        modal()
+        receberDadosFrm(idFormCadastro);
+        //modal();
         // frm.id == 'formIn' ? conexaoCrud(1) : conexaoCrud(2)
         //formSubmit()
     }
 })
 
-
 idBtnSalvaHistorico.addEventListener("click", () => 
 { 
+    modal();
+
     abrirCard(); 
 
     configCard(1);
-
 });
 
 idBtnDescartaHistorico.addEventListener("click", () => 
 { 
+    modal();
+
     abrirCard(); 
 
     configCard(2);
-    
 });
 
 idClose.addEventListener("click", () => 

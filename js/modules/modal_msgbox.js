@@ -20,6 +20,7 @@ export function configCard(type)
 
             styleCard('green','sucesso','Foi salvo com sucesso seus dados','check');
 
+            
             break;
 
         case 2:

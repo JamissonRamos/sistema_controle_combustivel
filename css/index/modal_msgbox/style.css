@@ -2,15 +2,15 @@
 .notifications
 {
     /* border: 1px solid red; */
-    max-width: 800px;
-    min-width: 350px;
-    max-height: 200px;
+    width: 0;
+    height: 0;
 
-    position: absolute;
+
+    /* position: absolute;
     top: 65px;
-    right: 30px;
+    right: 30px; */
 
-    padding: 20px 35px 20px 25px;
+    padding: 2em 1.2em 2em 1em;
 
     border-radius: 12px;
     border-left: 6px solid ; /* Esse valor vai ser mudar de acordo a chamado do car, pelo js */
@@ -28,6 +28,16 @@
 
 .notifications.active
 {
+    width: auto;
+    height: auto;
+    max-width: 800px;
+    min-width: 350px;
+    max-height: 200px;
+
+    position: absolute;
+    top: 65px;
+    right: 30px;
+
     transform: translateX(0%);
 }
 
@@ -69,7 +79,7 @@
     align-items: center;
     justify-content: center;
 
-    padding: 1em;
+    padding: 2em;
 }
 
 .notifications_content .messagen
@@ -97,7 +107,7 @@
 {
     font-size: 1em;
     font-weight: 500;
-    color: var(--cor-bg-3);
+    color: var(--cor-txt-2);
 }
 
 .notifications .close

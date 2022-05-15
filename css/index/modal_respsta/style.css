@@ -14,7 +14,7 @@
     justify-content: space-around;
 
     background: var(--cor-bg-4);
-    box-shadow: 2px 4px 2px 5px var(--cor-box-shadow-1);
+    /* box-shadow: 2px 4px 2px 5px var(--cor-box-shadow-1); */
     border-radius: 18px;
 
     z-index: 2;
@@ -28,6 +28,8 @@
     width: 30vw;
     height: 70vh;
 
+    box-shadow: 2px 4px 2px 5px var(--cor-box-shadow-1);
+    
     transform: translateX(0%);
 }
 

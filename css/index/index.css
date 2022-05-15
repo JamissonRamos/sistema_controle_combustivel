@@ -72,6 +72,8 @@ body
     height: 100vh;
 
     background-color: var(--cor-bg-1);
+
+    overflow: auto;
 }
 
 header, main, footer

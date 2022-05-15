@@ -22,12 +22,12 @@ export class ValidatorCampos
 
         let inputs = form.getElementsByTagName('input');
 
-//         console.log(inputs)
-//         console.log(textareas)
+        // console.log(inputs)
+        // console.log(textareas)
 
         let arrayInputs = [...inputs]
        
-//         console.log(arrayInputs)
+// //         console.log(arrayInputs)
 
         arrayInputs.forEach(item =>
         {
@@ -35,12 +35,12 @@ export class ValidatorCampos
 
                 if(item.getAttribute(this.validations[i]) != null)
                 {
-                    console.log(this.validations[i].replace('data-','').replace('-',''))
-                    console.log(item)
+                    // console.log(this.validations[i].replace('data-','').replace('-',''))
+                    // console.log(item)
 
                     let nomeMetodo = this.validations[i].replace('data-','').replace('-','');
 
-                    //console.log(nomeMetodo)
+                    // //console.log(nomeMetodo)
 
                     let valorAtributo = item.getAttribute(this.validations[i]);
 
@@ -109,11 +109,11 @@ export class ValidatorCampos
 
             novaDivErro.textContent = msg;
 
-            console.log(input)
+            // console.log(input)
             
             let inputPai = input.parentNode;
             
-            console.log(inputPai)
+            // console.log(inputPai)
 
             novaDivErro.classList.remove('template');
 
