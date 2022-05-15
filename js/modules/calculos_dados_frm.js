@@ -1,3 +1,5 @@
+import {mostraModal} from "../main.js";
+
 let preco           = 0
 let quilometros_dia = 0
 let media           = 0
@@ -26,22 +28,13 @@ let resulAnual      = 0
         'quilometros_dia' == item.id ? quilometros_dia = Number(item.value.replace(',', '.')) : false;
         'dias_semana' == item.id ? dias_semana = Number(item.value.replace(',', '.')) : false;
     });
-        
-        console.log(media)
-        console.log(preco)
-        console.log(quilometros_dia)
-        console.log(dias_semana)
 
-    resulDiario = valoresCal(1,quilometros_dia,media,preco).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-    resulSemanal = valoresCal(2,quilometros_dia,media,preco,dias_semana).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-    resulMensal = valoresCal(3,quilometros_dia,media,preco,dias_semana).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-    resulAnual = valoresCal(4,quilometros_dia,media,preco).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    resulDiario = valoresCal(1,quilometros_dia,media,preco);
+    resulSemanal = valoresCal(2,quilometros_dia,media,preco,dias_semana);
+    resulMensal = valoresCal(3,quilometros_dia,media,preco,dias_semana);
+    resulAnual = valoresCal(4,quilometros_dia,media,preco);
 
-	console.log(resulDiario)
-	console.log(resulSemanal)
-	console.log(resulMensal)
-    console.log(resulAnual)
-    // mostraModal(resulDiario, resulSemanal, resulMensal, resulAnual)
+    mostraModal(resulDiario, resulSemanal, resulMensal, resulAnual)
 
 };
 
@@ -78,3 +71,5 @@ function valoresCal(typeCalculo,  mediaCarro, valorGasolina , qtdKmDia, diaSeman
 
     return resultadoCalculo
 }
+
+
