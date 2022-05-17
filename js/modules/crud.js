@@ -1,12 +1,26 @@
 
+//let listaHistoricos = JSON.parse(localStorage.getItem('listaHistoricos')) || [];
 
-export function crud(type, array)
+//console.log(listaHistoricos);
+
+export function crud(type, obj)
 {
-    switch (Number) 
+    
+
+    switch (type) 
     {
+        
         case 1: 
+            console.log(obj);
+
+            //listaHistoricos.push(obj);
+
+            //console.log(listaHistoricos)
+
+            console.log('banco salvar');
+
             //Salvar o array (listaUsuario) dentro do localStorage = Vai convverter o array (listaUsuario) em json 
-            localStorage.listaHistorico = JSON.stringify(listaHistorico); 
+            localStorage.obj = JSON.stringify(obj); 
             break;
         case 2: 
             //O for of recebe como paramentro o Json do local storage e converte para cada loop ele vai atribuir um valor para o array

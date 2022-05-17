@@ -8,7 +8,8 @@ import {crud} from "./modules/crud.js";
 
 let validator = new ValidatorCampos();
 let arrayValoresCalculados = []
-let arrayDadosSalvar = []
+// let arrayDadosSalvar = []
+let listaHistoricos = JSON.parse(localStorage.getItem('listaHistoricos')) || [];
 
 console.log(arrayValoresCalculados)
 
@@ -109,7 +110,8 @@ idBtnSalvaHistorico.addEventListener("click", () =>
 
     console.log(gastoD)
     
-    arrayDadosSalvar.push( new DadosFrm
+    // arrayDadosSalvar.push( new DadosFrm
+    listaHistoricos.push( new DadosFrm
         (
             idFormCadastro.preco.value,
             idFormCadastro.media.value,
@@ -120,9 +122,10 @@ idBtnSalvaHistorico.addEventListener("click", () =>
         )
     )
     
-    console.log(arrayDadosSalvar)
+    console.log(listaHistoricos)
 
-    //crud(1, arrayValoresCalculados);
+
+    crud(1, listaHistoricos);
 
    // abrirCard(); 
 
