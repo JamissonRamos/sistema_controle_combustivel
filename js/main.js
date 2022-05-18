@@ -8,10 +8,7 @@ import {crud} from "./modules/crud.js";
 
 let validator = new ValidatorCampos();
 let arrayValoresCalculados = []
-// let arrayDadosSalvar = []
-let listaHistoricos = JSON.parse(localStorage.getItem('listaHistoricos')) || [];
-
-console.log(arrayValoresCalculados)
+// let listaHistoricos = JSON.parse(localStorage.getItem('listaHistoricos')) || [];
 
 //recebe todos os inputs do frm
 const inputs = document.querySelectorAll(".campo");
@@ -102,16 +99,12 @@ btnCalcular.addEventListener('click', (event) => {
 idBtnSalvaHistorico.addEventListener("click", () => 
 { 
     modal();
-
-    //cria fluxo para gera obj dados a ser salvos
-    console.log(idFormCadastro.preco.value)
     
     const [gastoD, gastoS, gastoM, gastoA] = arrayValoresCalculados
+   
+    let objHistorico = []
 
-    console.log(gastoD)
-    
-    // arrayDadosSalvar.push( new DadosFrm
-    listaHistoricos.push( new DadosFrm
+    objHistorico.push( new DadosFrm
         (
             idFormCadastro.preco.value,
             idFormCadastro.media.value,
@@ -122,14 +115,13 @@ idBtnSalvaHistorico.addEventListener("click", () =>
         )
     )
     
-    console.log(listaHistoricos)
+    console.log(objHistorico)
+    
+    crud(1, objHistorico);
+    
+    abrirCard(); 
 
-
-    crud(1, listaHistoricos);
-
-   // abrirCard(); 
-
-    //configCard(1);
+    configCard(1);
 
 
 });

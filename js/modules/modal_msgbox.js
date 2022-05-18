@@ -18,7 +18,7 @@ export function configCard(type)
     {
         case 1:
 
-            styleCard('green','sucesso','Foi salvo com sucesso seus dados','check');
+            styleCard('green','sucesso','Dados salvo com sucesso ','check');
 
             
             break;
@@ -32,6 +32,10 @@ export function configCard(type)
             styleCard('red','Erro','Erro no servidor tente novamente','close');
 
             break;
+        case 4:
+                styleCard('red','Erro','Todo mundo erra e dessa vez foi agente. Tente novamente mais tarde','close');
+    
+                break;
     
         default:
 
@@ -48,11 +52,13 @@ function styleCard(cor, title, msg, icone)
     idIcone.innerHTML = icone;
 
     idtitle.style.color = cor;
-
+    
     idtitle.innerHTML = title;
-
+    
     idMsg.innerHTML = msg;
-
+    
+    idMsg.style.color = cor;
+    
     idClose.style.color = cor;
 
     idBarraProgreco.style.setProperty('--bg', cor); //muda a cor da barra de progresso
