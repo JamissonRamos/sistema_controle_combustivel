@@ -8,7 +8,6 @@ import {crud} from "./modules/crud.js";
 
 let validator = new ValidatorCampos();
 let arrayValoresCalculados = []
-// let listaHistoricos = JSON.parse(localStorage.getItem('listaHistoricos')) || [];
 
 //recebe todos os inputs do frm
 const inputs = document.querySelectorAll(".campo");
@@ -18,7 +17,8 @@ const inputs = document.querySelectorAll(".campo");
 
 //#region Funções
 
-function DadosFrm(preco,media,gastoDiario,gastoSemanal,gastoMensal,gastoAual) {
+function DadosFrm(preco, media, gastoDiario, gastoSemanal, gastoMensal, gastoAual) 
+{
     this.data = tratarData();
     this.preco = preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     this.media = media;
@@ -28,7 +28,8 @@ function DadosFrm(preco,media,gastoDiario,gastoSemanal,gastoMensal,gastoAual) {
     this.gastoAual = gastoAual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 };
 
-function tratarData() {
+function tratarData() 
+{
     let data = new Date(),
         dia  = data.getDate().toString().padStart(2, '0'),
         mes  = (data.getMonth()+1).toString().padStart(2, '0'),
@@ -39,11 +40,41 @@ function tratarData() {
     return `${dia}/${mes}/${ano} ${hora}:${min}:${sec}`;
 }
 
-function modal() 
+//Função para fazer o frm submit, atualizado a tela 
+function formSubmit()
 {
-    // idDivModal.classList.toggle("template")
-    idDivModal.classList.toggle("active")
-    idDivResposta.classList.toggle("active")
+    document.getElementById('idFrmEnvioEmail').submit();
+}
+
+function modal(id) 
+{
+
+    switch (id) 
+    {
+        case 1: //Btn Meus Históricos
+            idDivModal.classList.toggle("active");
+
+            break;
+
+        case 2: //Btn Mostra Cálculos
+            idDivModal.classList.toggle("active");
+    
+            idDivResposta.classList.toggle("active");
+
+            break;
+
+        case 3: //Btn Mostra Fechar
+            idDivModal.classList.remove("active");
+    
+            idDivResposta.classList.remove("active");
+
+            break;
+    
+        default:
+            break;
+    };
+
+    
 }
  
 //Função que vai mostra os valores dos cálculos nos campos do frm resposta
@@ -90,19 +121,30 @@ btnCalcular.addEventListener('click', (event) => {
     if(erro.length === 0)
     {
         receberDadosFrm(idFormCadastro);
-        modal();
-        // frm.id == 'formIn' ? conexaoCrud(1) : conexaoCrud(2)
-        //formSubmit()
+
+        modal(2);
+
+        formSubmit();
     }
 })
 
+idButtonHistorico.addEventListener("click", () => 
+{
+    modal (1);
+});
+
+idDivModal.addEventListener("click", () => 
+{
+    modal (3);
+});
+
 idBtnSalvaHistorico.addEventListener("click", () => 
 { 
-    modal();
+    // modal(2);
     
-    const [gastoD, gastoS, gastoM, gastoA] = arrayValoresCalculados
-   
-    let objHistorico = []
+    const [gastoD, gastoS, gastoM, gastoA] = arrayValoresCalculados;
+
+    let objHistorico = [];
 
     objHistorico.push( new DadosFrm
         (
@@ -113,16 +155,9 @@ idBtnSalvaHistorico.addEventListener("click", () =>
             gastoM, 
             gastoA
         )
-    )
-    
-    console.log(objHistorico)
-    
+    );
+        
     crud(1, objHistorico);
-    
-    abrirCard(); 
-
-    configCard(1);
-
 
 });
 

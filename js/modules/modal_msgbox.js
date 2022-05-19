@@ -11,14 +11,14 @@ export function abrirCard ()
     setTimeout(() => { idBarraProgreco.classList.remove("active"); }, 5300);
 }
 
-export function configCard(type)
+export function configCard(type, msg)
 {
     
     switch (type) 
     {
         case 1:
 
-            styleCard('green','sucesso','Dados salvo com sucesso ','check');
+            styleCard('green','sucesso','Dados salvo com sucesso!','check');
 
             
             break;
@@ -33,7 +33,7 @@ export function configCard(type)
 
             break;
         case 4:
-                styleCard('red','Erro','Todo mundo erra e dessa vez foi agente. Tente novamente mais tarde','close');
+                styleCard('red','Erro',`Todo mundo erra e dessa vez foi agente. ${msg}`,'close');
     
                 break;
     
