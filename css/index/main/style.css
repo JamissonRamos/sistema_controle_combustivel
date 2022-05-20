@@ -80,11 +80,11 @@ main
 .container_left .content_txt .txt
 {
     font-weight: 700;
-    font-size: .8em;
+    font-size: 1em;
     line-height: 28px;
-    text-align: justify;
+    text-align: center;
     
-    color: var(--cor-txt-3);
+    color: var(--cor-txt-4);
 }
 
 .container_left .content_img

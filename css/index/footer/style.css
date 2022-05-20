@@ -96,7 +96,7 @@
     font-weight: 500;
     
     transition: .4s linear;
-    z-index: 10;
+    z-index: 1;
 }
 .box_card_social .btn_menu_lateral .icone_menu:hover
 {

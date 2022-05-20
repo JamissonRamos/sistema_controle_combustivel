@@ -35,6 +35,8 @@
     --cor-bg-6: #9A9FA8;
     --cor-bg-7: rgba(57, 57, 57, 0.94);
 
+    
+
 
 
     --cor-border-1: #B20BDC;
@@ -45,6 +47,7 @@
     --cor-txt-2: #B20BDC;
     --cor-txt-3: #00BFA6;
     --cor-txt-4: #9A9FA8;
+    --cor-txt-5: #171717;
 
 }
 
@@ -61,6 +64,39 @@ body
     justify-content: center;
     align-items: center;
 }
+
+
+/* Parte do scroll da tela */
+::-webkit-scrollbar
+{
+    width: 14px; 
+}
+
+::-webkit-scrollbar-track
+{
+    /* trabalha a parte do fundo da barra de rolagem */
+
+    background: transparent; /* #e4e4e4*/
+
+    border-radius: 118px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    /* trabalha a parte de rolagem */
+
+    background: linear-gradient(0deg, var(--cor-bg-5) 100%, var(--cor-bg-7) 100%);
+
+    border: 3px solid transparent;
+    border-radius: 8px;
+
+    background-clip: content-box;
+}
+
+
+
+
+
 
 .container
 {
@@ -196,8 +232,6 @@ header, main, footer
 
     transform: translateX(0%);
 }
-
-
 
 /* Formatação de aviso de validação de campos */
 

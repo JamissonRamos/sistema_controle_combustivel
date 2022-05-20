@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/index/footer/style.css"> 
     <link rel="stylesheet" href="css/index/modal_respsta/style.css"> 
     <link rel="stylesheet" href="css/index/modal_msgbox/style.css"> 
+    <link rel="stylesheet" href="css/index/modal_tabela/style.css"> 
 
 </head>
 <body>
@@ -192,7 +193,7 @@
 
     </div><!-- Fim da div container -->
 
-    <div id="idDivModal" class="modal "></div><!-- Modal da página -->
+    <div id="idDivModal" class="modal active"></div><!-- Modal da página -->
 
     <div id="idDivResposta" class="container_respo ">
 
@@ -275,6 +276,52 @@
             </button>
 
         </div>
+    </div>
+
+    <div class="container_table_historico active">
+
+        <div class="container_table">
+        
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>preço da gasolina</th>
+                        <th>media km /1L</th>
+                        <th>gasto diário</th>
+                        <th>gasto semanal</th>
+                        <th>gasto mensal</th>
+                        <th>gasto anual</th>
+                        <th colspan="1">ação</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Body1 linha1</td>
+                        <td>Body2 linha1</td>
+                        <td>Body3 linha1</td>
+                        <td>Body1 linha1</td>
+                        <td>Body2 linha1</td>
+                        <td>Body3 linha1</td>
+                        <td>Body2 linha1</td>
+                        <td class="td_button"> 
+                            <button>
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+            
+        </div>
+
+        <div>
+            <button>Limpar Históricos</button>
+        </div>
+         
     </div>
 
     
