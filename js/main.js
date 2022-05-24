@@ -95,9 +95,55 @@ export function mostraModal(valorDiario, valorSemanal, valorMensal, valorAnual)
     )
     
     console.log(arrayValoresCalculados)
-}   
-//#endregion
+}
 
+//Função que vai carregar os dados na tabela de históricos 
+function tratandoDadosHistorico(obj) 
+{
+    obj.forEach((item, indice) => { criarTemplete(item, indice) });
+
+    modal(1);
+}
+
+function criarTemplete(obj, indice) 
+{
+    idTbodyHistorico.innerHTML +=
+    `
+        <tr>
+            <td> ${obj.data} </td>
+            <td> ${Number(obj.preco).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </td>
+            <td> ${obj.media} </td>
+            <td> ${Number(obj.gastoDiario).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </td>
+            <td> ${Number(obj.gastoSemanal).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </td>
+            <td> ${Number(obj.gastoMensal).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </td>
+            <td> ${Number(obj.gastoAual).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </td>
+             <td class="td_button"> 
+                <button class="icone fas fa-trash-alt " onclick="excluirRegistro(${indice})"> </button> 
+            </td>
+
+        </tr>
+    
+    `
+}
+
+async function excluirRegistro(indiceRegistro) 
+{
+    console.log(`Clicou no no indice ${indiceRegistro}`)
+
+    let arrayHistoricos = await crud(2)
+
+    console.log(arrayHistoricos)
+
+    //Excluir itens da lista
+    arrayHistoricos.splice(indiceRegistro,1)
+            
+    console.log(arrayHistoricos);
+
+    await crud(3,arrayHistoricos);
+}
+
+
+//#endregion
 
 
 //#region Eventos do HTML
@@ -129,9 +175,13 @@ btnCalcular.addEventListener('click', (event) => {
     }
 })
 
-idButtonHistorico.addEventListener("click", () => 
+idButtonHistorico.addEventListener("click", async ()  => 
 {
-    modal (1);
+    let arrayHistoricos = await crud(2)
+
+    console.log(arrayHistoricos)
+    
+    arrayHistoricos.length > 0 ? tratandoDadosHistorico(arrayHistoricos) : console.log('modal2')//modal (1);
 
     
 });
@@ -182,8 +232,15 @@ idClose.addEventListener("click", () =>
     // setTimeout(() => { idBarraProgreco.classList.remove("active"); }, 6000);
 })
 
+idCloseListaHistorico.addEventListener("click", () => 
+{
+   modal(1)
+})
+
+idButtonLimparHistorico.addEventListener("click", () => {localStorage.clear(); modal(1)})
 
 
+//#endregion 
 
 
-//#endregion
+window.excluirRegistro=excluirRegistro;

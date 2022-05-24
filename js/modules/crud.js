@@ -1,13 +1,11 @@
-import {read,create} from "../modules/banco_dados.js";
-
+import {read,create,excluir} from "../modules/banco_dados.js";
 
 export async function crud(type, obj)
 {
-    const[ objetoSalvar ] = obj;
-
     switch (type) 
     {
         case 1: 
+            const[ objetoSalvar ] = obj;
             
             let listaHistoricos =  await read();
             
@@ -18,13 +16,15 @@ export async function crud(type, obj)
             break;
 
         case 2: 
-            
-            //O for of recebe como paramentro o Json do local storage e converte para cada loop ele vai atribuir um valor para o array
-            //for (let i of JSON.parse(localStorage.listaHistorico)) {
-            //console.log(i)
-            //recuperarGasto.push(new usuario(i.nome, i.email, i.senha, i.dataCadastro))
-            //console.log(recuperarTarefas)
-            //}
+
+            let arrayHistoricos =  await read();
+
+            return arrayHistoricos
+
+        case 3:
+
+            await excluir(obj);
+
             break;
 
         default:
