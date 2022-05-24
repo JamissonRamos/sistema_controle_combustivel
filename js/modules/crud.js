@@ -16,8 +16,9 @@ export async function crud(type, obj)
             await create(listaHistoricos);
  
             break;
-        case 2: 
 
+        case 2: 
+            
             //O for of recebe como paramentro o Json do local storage e converte para cada loop ele vai atribuir um valor para o array
             //for (let i of JSON.parse(localStorage.listaHistorico)) {
             //console.log(i)
@@ -29,7 +30,9 @@ export async function crud(type, obj)
         default:
 
             abrirCard(); 
+
             configCard(4);
+
             break;
     }
 };

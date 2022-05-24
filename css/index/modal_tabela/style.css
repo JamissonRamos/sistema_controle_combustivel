@@ -39,7 +39,7 @@
 
 .container_table
 {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     width: 100%;
     height: 80%;
@@ -80,20 +80,43 @@ tbody tr, td
 
     font-weight: 400;
     font-size: 1em;
-    text-align: left;
+    text-align: center;
 
     color: var(--cor-txt-5);
 }
 
+
+/* Para deixa a linha da tabela uma diferente da outra zebra */
 tbody tr:nth-child(even)
 {
     background-color: var(--cor-bg-6)
 }
+
+/* Mudar a cor do tr quando receber o foco */
 tbody tr:hover
 {
-    background-color: var(--cor-bg-5);
+    background-color: var(--cor-bg-8);
 
     color: var(--cor-txt-1);
+}
+
+.td_button
+{
+
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.td_button .icone
+{
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+    outline: none;
+
+    cursor: pointer;
 }
 
 

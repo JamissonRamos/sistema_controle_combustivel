@@ -53,6 +53,7 @@ function modal(id)
     {
         case 1: //Btn Meus Históricos
             idDivModal.classList.toggle("active");
+            idDivTebelaHistorico.classList.toggle("active");
 
             break;
 
@@ -131,6 +132,8 @@ btnCalcular.addEventListener('click', (event) => {
 idButtonHistorico.addEventListener("click", () => 
 {
     modal (1);
+
+    
 });
 
 idDivModal.addEventListener("click", () => 
