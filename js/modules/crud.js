@@ -8,7 +8,7 @@ export async function crud(type, obj)
             const[ objetoSalvar ] = obj;
             
             let listaHistoricos =  await read();
-            
+                        
             listaHistoricos.push(objetoSalvar);
 
             await create(listaHistoricos);
@@ -28,7 +28,7 @@ export async function crud(type, obj)
             break;
 
         default:
-
+        
             abrirCard(); 
 
             configCard(4);

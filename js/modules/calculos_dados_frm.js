@@ -12,12 +12,7 @@ let resulAnual      = 0
 
  export function receberDadosFrm(frm)
 {
-    console.log('entrei no calculo ')
-    console.log(frm)
-
     let inputs = frm.getElementsByTagName('input');
-
-    console.log(inputs)
 
     let arrayInputs = [...inputs]
 
@@ -34,7 +29,7 @@ let resulAnual      = 0
     resulMensal = valoresCal(3,quilometros_dia,media,preco,dias_semana);
     resulAnual = valoresCal(4,quilometros_dia,media,preco);
 
-    mostraModal(resulDiario, resulSemanal, resulMensal, resulAnual)
+    mostraModal(preco, media, resulDiario, resulSemanal, resulMensal, resulAnual)
 
 };
 

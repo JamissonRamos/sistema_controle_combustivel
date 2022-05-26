@@ -5,10 +5,9 @@
     width: 0;
     height: 0;
 
-
-    /* position: absolute;
-    top: 65px;
-    right: 30px; */
+    position: relative;
+    top: 0;
+    right: -300px;
 
     padding: 2em 1.2em 2em 1em;
 
@@ -23,7 +22,6 @@
     transition: all 0.9s cubic-bezier(0.68,-0.55,0.265,2.50) ;
 
     z-index: 3;
-   
 }
 
 .notifications.active
@@ -37,6 +35,7 @@
     position: absolute;
     top: 65px;
     right: 30px;
+    
 
     transform: translateX(0%);
 }
@@ -50,7 +49,7 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     
 }
 
@@ -58,7 +57,7 @@
 {
     /* border: 1px solid red; */
 
-    width: 40px;
+    width: 50px;
     height: 40px;
     
     display: flex;
@@ -79,7 +78,7 @@
     align-items: center;
     justify-content: center;
 
-    padding: 2em;
+    /* padding: 2em; */
 }
 
 .notifications_content .messagen

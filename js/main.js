@@ -20,7 +20,7 @@ const inputs = document.querySelectorAll(".campo");
 function DadosFrm(preco, media, gastoDiario, gastoSemanal, gastoMensal, gastoAual) 
 {
     this.data = tratarData();
-    this.preco = preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    this.preco = Number(preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
     this.media = media;
     this.gastoDiario = gastoDiario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     this.gastoSemanal = gastoSemanal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
@@ -41,9 +41,23 @@ function tratarData()
 }
 
 //Função para fazer o frm submit, atualizado a tela 
-function formSubmit()
+function atualizarForm(type)
 {
-    document.getElementById('idFrmEnvioEmail').submit();
+    switch (type) 
+    {
+        case 1:
+            document.getElementById('idFormCadastro').reset();
+            
+            break;
+            
+        case 2:
+            
+            document.getElementById('idFormCadastro').submit();
+            break;
+    
+        default:
+            break;
+    }
 }
 
 function modal(id) 
@@ -64,10 +78,10 @@ function modal(id)
 
             break;
 
-        case 3: //Btn Mostra Fechar
-            idDivModal.classList.remove("active");
+        case 3: //Mostra modal Sem Registo
+            idDivModal.classList.toggle("active");
     
-            idDivResposta.classList.remove("active");
+            idDivSemRegistro.classList.toggle("active");
 
             break;
     
@@ -79,7 +93,7 @@ function modal(id)
 }
  
 //Função que vai mostra os valores dos cálculos nos campos do frm resposta
-export function mostraModal(valorDiario, valorSemanal, valorMensal, valorAnual)
+export function mostraModal(preco, media, valorDiario, valorSemanal, valorMensal, valorAnual)
 {
     idSpanGatoD.textContent = valorDiario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  ;
     idSpanGatoS.textContent = valorSemanal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  ;
@@ -88,13 +102,13 @@ export function mostraModal(valorDiario, valorSemanal, valorMensal, valorAnual)
 
     arrayValoresCalculados.push
     (
+        preco.toFixed(2),
+        media,
         valorDiario.toFixed(2),
         valorSemanal.toFixed(2),
         valorMensal.toFixed(2),
         valorAnual.toFixed(2) 
     )
-    
-    console.log(arrayValoresCalculados)
 }
 
 //Função que vai carregar os dados na tabela de históricos 
@@ -128,16 +142,10 @@ function criarTemplete(obj, indice)
 
 async function excluirRegistro(indiceRegistro) 
 {
-    console.log(`Clicou no no indice ${indiceRegistro}`)
-
     let arrayHistoricos = await crud(2)
-
-    console.log(arrayHistoricos)
 
     //Excluir itens da lista
     arrayHistoricos.splice(indiceRegistro,1)
-            
-    console.log(arrayHistoricos);
 
     await crud(3,arrayHistoricos);
 }
@@ -171,19 +179,15 @@ btnCalcular.addEventListener('click', (event) => {
 
         modal(2);
 
-        formSubmit();
-    }
+        atualizarForm(1);
+    }   
 })
 
 idButtonHistorico.addEventListener("click", async ()  => 
 {
     let arrayHistoricos = await crud(2)
-
-    console.log(arrayHistoricos)
     
-    arrayHistoricos.length > 0 ? tratandoDadosHistorico(arrayHistoricos) : console.log('modal2')//modal (1);
-
-    
+    arrayHistoricos.length > 0 ? tratandoDadosHistorico(arrayHistoricos) : modal(3);    
 });
 
 idDivModal.addEventListener("click", () => 
@@ -195,14 +199,15 @@ idBtnSalvaHistorico.addEventListener("click", () =>
 { 
     // modal(2);
     
-    const [gastoD, gastoS, gastoM, gastoA] = arrayValoresCalculados;
+    const [preco, media, gastoD, gastoS, gastoM, gastoA] = arrayValoresCalculados;
 
     let objHistorico = [];
 
     objHistorico.push( new DadosFrm
         (
-            idFormCadastro.preco.value,
-            idFormCadastro.media.value,
+            
+            preco,
+            media,
             gastoD, 
             gastoS, 
             gastoM, 
@@ -211,16 +216,31 @@ idBtnSalvaHistorico.addEventListener("click", () =>
     );
         
     crud(1, objHistorico);
+    
+    //Fechar os modal de cálculos
+    setTimeout(() =>
+    {
+        modal(2);
 
+        atualizarForm(2);
+
+    }, 5400);
 });
 
-idBtnDescartaHistorico.addEventListener("click", () => 
+idBtnDescartaHistorico.addEventListener("click", ()  => 
 { 
-    modal();
-
     abrirCard(); 
-
+    
     configCard(2);
+    
+    setTimeout(() =>
+    {
+        modal(2);
+
+        //Depois que fechar os modal atualizar o frm
+        setTimeout(() => { atualizarForm(2);}, 900);
+        
+    }, 5400);
 });
 
 idClose.addEventListener("click", () => 
@@ -235,6 +255,11 @@ idClose.addEventListener("click", () =>
 idCloseListaHistorico.addEventListener("click", () => 
 {
    modal(1)
+})
+
+idSpanCloseSemRegistro.addEventListener("click", () => 
+{
+   modal(3)
 })
 
 idButtonLimparHistorico.addEventListener("click", () => {localStorage.clear(); modal(1)})

@@ -1,0 +1,100 @@
+
+.container_Msg_Sem_Registro
+{
+    /* border: 1px solid red; */
+
+    width: 0vw;
+    height: 0vh;
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly ;
+
+    /* padding: 2em 1em; */
+
+    background: var(--cor-bg-1);
+
+    border-radius: 18px;
+
+    z-index: 3;
+
+    transform: translateX(calc(9% + 100px));
+    transition: all 1s cubic-bezier(0.68,-0.55,0.265,2.50) ;
+}
+
+.container_Msg_Sem_Registro.active
+{
+    width: 60vw;
+    height: 80vh;
+
+    box-shadow: 2px 4px 2px 5px var(--cor-box-shadow-1);
+    
+    transform: translateX(0%);
+}
+
+.primary_block
+{
+    /* border: 1px solid red; */
+
+    width: 90%;
+    height: 20%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4em 2em;
+}
+
+.primary_block .title
+{
+
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--cor-txt-2);
+
+}
+
+.block_secondary
+{
+    /* border: 1px solid red; */
+
+    width: 90%;
+    height: 60%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.block_secondary .icone
+{
+    width: 60%;
+    height: 100%;
+}
+
+.container_Msg_Sem_Registro .close
+{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    padding: 5px;
+
+    cursor: pointer;
+
+    transition: .2s linear;
+    opacity: 0.7;
+}
+
+.container_Msg_Sem_Registro  .close:hover
+{
+    opacity: 1;
+
+    transition: all .8s ease-in-out;
+
+    transform: rotate(175deg);
+}

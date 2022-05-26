@@ -7,13 +7,13 @@
 
     <title> S.C.C. </title>
 
-      <!-- Link externo -->
-      <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet"> -->
-      <script src="https://kit.fontawesome.com/5801faff1f.js" crossorigin="anonymous"></script>
-   
-      <!-- Link do icone da aba do navegador -->
-      <link rel="shortcut icon" href="./assets/icone_introducao.png" type="image/x-icon">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Link externo -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet"> -->
+    <script src="https://kit.fontawesome.com/5801faff1f.js" crossorigin="anonymous"></script>
+
+    <!-- Link do icone da aba do navegador -->
+    <link rel="shortcut icon" href="./assets/icone_introducao.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Estilo da página -->
     <link rel="stylesheet" href="css/index/index.css"> <!-- Css padrão  -->
@@ -23,8 +23,10 @@
     <link rel="stylesheet" href="css/index/modal_respsta/style.css"> 
     <link rel="stylesheet" href="css/index/modal_msgbox/style.css"> 
     <link rel="stylesheet" href="css/index/modal_tabela/style.css"> 
+    <link rel="stylesheet" href="css/index/modal_tabela_sem_registro/style.css"> 
 
 </head>
+
 <body>
     
 
@@ -57,16 +59,16 @@
 
                     <div class="title_primary">
 
-                        <h1 class="txt_primary"> Controle de Gastos de Combustível </h1>
+                        <h1 class="txt_primary"> Controle de Gastos com Combustível </h1>
 
                     </div>
 
                     <div class="content_txt">
 
                         <p class="txt">
-                            Você sabe quanto seu veiculo gatas de combustível? ainda não? 
+                            Você sabe quanto seu veiculo gata de combustível? ainda não? 
                             Então essa aplicação foi feita pensando em você.
-                            Insira algumas informações e saiba quanto você gasta de combustível com o seu veículo ;)
+                            Insira algumas informações e saiba quanto você gasta de combustível com o seu veículo )
                         </p>
 
                     </div>
@@ -315,6 +317,21 @@
         <span id="idCloseListaHistorico" class=" material-icons close">close</span>
     </div>
 
+    <div id="idDivSemRegistro" class="container_Msg_Sem_Registro ">
+
+        <div class="primary_block">
+
+            <h1 class="title">Não existe valores salvos</h1>
+
+        </div>
+
+        <div class="block_secondary">
+            <img class="icone" src="assets/icone_nãoExisteRegistro.png" alt="Não Existe Registro">
+        </div>
+
+        <span id="idSpanCloseSemRegistro" class=" material-icons close">close</span>
+    </div>
+
     
     <div id="idNotifications" class="notifications ">
 
@@ -337,7 +354,8 @@
 
                 <span id="idMsg" class="text_two"> ******* </span>
 
-            </div> 
+            </div>
+             
         </div> <!-- fim da div notifications_content -->
 
         <span id="idClose" class=" material-icons close">close</span>
@@ -349,4 +367,5 @@
     <p class="error-validation template">teste de mascara</p>  
     <script type="module" src="./js/main.js"></script>
 </body>
+
 </html>

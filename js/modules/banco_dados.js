@@ -33,7 +33,7 @@ export async function excluir(objSalvo)
         
         localStorage.listaHistoricos = await JSON.stringify(objSalvo);
 
-        msgBox(1);
+        msgBox(5);
 
     } catch(e) { msgBox(4, e) } 
 }

@@ -6,9 +6,9 @@ export function abrirCard ()
 
     idBarraProgreco.classList.add("active");
 
-    setTimeout(() => { idNotifications.classList.remove("active"); }, 5000);
+    //setTimeout(() => { idNotifications.classList.remove("active"); }, 5000);
 
-    setTimeout(() => { idBarraProgreco.classList.remove("active"); }, 5300);
+    //setTimeout(() => { idBarraProgreco.classList.remove("active"); }, 5300);
 }
 
 export function configCard(type, msg)
@@ -32,8 +32,13 @@ export function configCard(type, msg)
             styleCard('red','Erro','Erro no servidor tente novamente','close');
 
             break;
+
         case 4:
                 styleCard('red','Erro',`Todo mundo erra e dessa vez foi agente. ${msg}`,'close');
+    
+                break;
+        case 5:
+                styleCard('green','sucesso','Dados excluídos com sucesso!','check');
     
                 break;
     
@@ -62,4 +67,14 @@ function styleCard(cor, title, msg, icone)
     idClose.style.color = cor;
 
     idBarraProgreco.style.setProperty('--bg', cor); //muda a cor da barra de progresso
+
+    setTimeout(() => 
+    { 
+        idNotifications.classList.remove("active"); 
+
+        setTimeout(() => { idBarraProgreco.classList.remove("active"); }, 5300);
+
+    }, 5000);
+
+
 };
