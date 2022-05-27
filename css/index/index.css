@@ -271,3 +271,16 @@ header, main, footer
         justify-content: center;
     }
 }
+
+
+@media screen and (min-width: 1024px)
+{
+    header, main, footer
+    {
+        /* Os elementos recebe aqui o espaçamento do contêiner, assim pode trabalha de acordo a necessidade do projeto */
+        /* border: 1px solid blue; */
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
