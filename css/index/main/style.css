@@ -173,6 +173,11 @@ main
     width: 500px;
     height: 525px;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
     padding: 48px 0;
 
     background-color: var(--cor-bg-2);
@@ -186,18 +191,27 @@ main
 {
     border: 1px solid blue;
 
-    width: 100%;
-	height: 75px;
+    width: 90%;
+	/* height: 17%; */
 
     position: relative;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     margin: 20px auto;
     padding: 0;
+}
+
+.frm_Cds .input .container_title
+{
+    border: 1px solid red;
+    width: 100%;
+    height: 80%;
+    padding: 1em 0;
+    margin-bottom: 10px;
 }
 
 .frm_Cds .input .title_input
@@ -222,7 +236,9 @@ main
     width: 100%;
   
     position: absolute;
+    
 
+    margin-bottom: .1em;
     padding: .1em 1.2em ;
 
     border-bottom: 2px solid var(--cor-txt-4);
@@ -236,7 +252,7 @@ main
 
 .frm_Cds .input .campo:focus
 {
-    top: 20px;
+    top: 30px;
     left: 10px;
 
     border-bottom: 2px solid var(--cor-txt-2);
